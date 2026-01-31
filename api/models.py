@@ -12,6 +12,7 @@ class Item(models.Model):
 
 # This is for all the blog items
 class BlogItem(models.Model):
+    slug = models.SlugField(max_length=200, unique=True)
     blog_name = models.CharField(max_length=200, unique=True)
     date_published = models.DateField()
     author = models.CharField(max_length=100)
