@@ -56,6 +56,8 @@ MIDDLEWARE = [
 
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:5173",
+    "http://localhost:4173",
+    "https://d30gbw0v2swh01.cloudfront.net/"
 ]
 
 ROOT_URLCONF = 'myproject.urls'
