@@ -9,4 +9,5 @@ router.register(r'blog_items', BlogItemViewSet)
 urlpatterns = [
     path('helloworld/', hello_world),
     path('', include(router.urls)),
+    path('api-auth/', include('rest_framework.urls')),
 ]

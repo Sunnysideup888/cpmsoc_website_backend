@@ -3,6 +3,7 @@ from rest_framework import viewsets
 from django.http import JsonResponse
 from rest_framework.decorators import action
 from rest_framework.response import Response
+from rest_framework.permissions import IsAuthenticatedOrReadOnly
 
 from .models import Item, BlogItem
 from .serializers import ItemSerializer, BlogItemSerializer, BlogItemShortSerializer
@@ -16,6 +17,8 @@ class ItemViewSet(viewsets.ModelViewSet):
 
 # All the other routes are handled by Django already so like regular GET, PUT, POST, DELETE
 class BlogItemViewSet(viewsets.ModelViewSet):
+    permission_classes = [IsAuthenticatedOrReadOnly]
+
     def get_serializer(self, *args, **kwargs):
         if isinstance(kwargs.get('data', {}), list):
             kwargs['many'] = True
