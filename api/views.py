@@ -16,6 +16,12 @@ class ItemViewSet(viewsets.ModelViewSet):
 
 # All the other routes are handled by Django already so like regular GET, PUT, POST, DELETE
 class BlogItemViewSet(viewsets.ModelViewSet):
+    def get_serializer(self, *args, **kwargs):
+        if isinstance(kwargs.get('data', {}), list):
+            kwargs['many'] = True
+
+        return super().get_serializer(*args, **kwargs)
+
     queryset = BlogItem.objects.all().order_by('-date_published')
     serializer_class = BlogItemSerializer
     lookup_field = 'id'
