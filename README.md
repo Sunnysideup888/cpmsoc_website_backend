@@ -47,5 +47,9 @@ I usually host on an EC2 instance, but since its dockerised it should work on an
 
 For CORS, you'll need to want to allow the actual URL the website is hosted on. Look at `.env.example`.
 
-There's CI/CD pipelines if you go `github > workflows > deploy.yml`, setup for Amazon EC2. Though if you use a different cloud provider
+There is a CI/CD pipeline if you go `github > workflows > deploy.yml`, setup for Amazon EC2. Though if you use a different cloud provider
 feel free to change this. You'll need to place the relevant secrets in the github repository.
+
+As for adding infromation to a blog, its all in markdown, with support for Latex. I used an editor called Obsidian to convert the blogs but any
+markdown based editor should work fine. When adding images to the blog, they must be on a publicly available URL. I usually use a public S3 bucket,
+but any other alternative (e.g. just copy pasting from the relevant online website the image URL is from will work as well).
