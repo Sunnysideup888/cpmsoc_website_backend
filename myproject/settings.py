@@ -55,7 +55,11 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+USE_X_FORWARDED_HOST = True
+
 CORS_ALLOWED_ORIGINS = os.environ.get('CORS_HOSTS', 'http://localhost:5173').split(',')
+
 
 ROOT_URLCONF = 'myproject.urls'
 
