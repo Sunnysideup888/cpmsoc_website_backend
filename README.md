@@ -29,7 +29,7 @@ POST /api/blog_items - Add blog items, payload as a list or just single JSON
 GET /api/blog_items/by_name/{blog_name} - Get a blog by its name
 GET /api/blog_items/by_id/{id} - Get a blog by its ID
 GET /api/blog_items/by_slug/{slug}/ - Get a blog by its slug
-GET /api/blog_items/filter_by_tags/?tags=Math&tags=Science - Get all blogs with a specific tag(s)
+GET /api/blog_items/filter_by_tags/?tags=Mathematics&tags=... - Get all blogs with a specific tag(s)
 GET /api/blog_items/get_next_by_slug/{slug}/ - Get the next blog (based on chronological order, will loop around on the oldest blog to the newest blog)
 
 DELETE /api/blog_items/{id} - Delete a blog by its ID
