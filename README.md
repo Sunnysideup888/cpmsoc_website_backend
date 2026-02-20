@@ -44,3 +44,8 @@ Then copy the output from the txt file and place it into Postman or equivalent a
 ![img.png](explanation_images/img3.png)
 
 I usually host on an EC2 instance, but since its dockerised it should work on any general cloud provider :)
+
+For CORS, you'll need to want to allow the actual URL the website is hosted on. Look at `.env.example`.
+
+There's CI/CD pipelines if you go `github > workflows > deploy.yml`, setup for Amazon EC2. Though if you use a different cloud provider
+feel free to change this. You'll need to place the relevant secrets in the github repository.
